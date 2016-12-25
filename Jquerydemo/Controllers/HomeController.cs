@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Jquerydemo.Infrastructure;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -6,7 +7,7 @@ using System.Web.Mvc;
 
 namespace Jquerydemo.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : JQBaseController
     {
         public ActionResult Index()
         {
