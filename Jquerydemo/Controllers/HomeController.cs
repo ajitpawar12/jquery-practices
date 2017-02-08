@@ -26,5 +26,15 @@ namespace Jquerydemo.Controllers
 
             return View();
         }
+
+        public ActionResult Selectordemo()
+        {
+            return View();
+        }
+
+        public ActionResult JqMethods()
+        {
+            return View();
+        }
     }
 }

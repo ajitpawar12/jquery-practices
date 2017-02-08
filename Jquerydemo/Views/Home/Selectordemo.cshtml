@@ -1,0 +1,77 @@
+﻿
+@{
+    ViewBag.Title = "Jqdemo";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>Jqdemo</h2>
+<style>
+    .paraone {
+        border: 1px solid;
+        font-weight: bold;
+    }
+
+    .divone {
+        border: 1px solid;
+        background-color: yellow;
+    }
+</style>
+@*<div id="demo">
+        <ul>
+            <li><label id="lbl"></label></li>
+            <li></li>
+            <li><input type="text" id="txtbox" /></li>
+            <li></li>
+            <li><textarea id="txtarea"></textarea></li>
+            <li></li>
+            <li><input type="submit" id="subbtn" value="Submit" /></li>
+        </ul>
+
+    </div>*@
+
+<div id="div1">
+    <p></p>
+    <p></p>
+</div>
+
+<p id="para1" class="paraone"></p>
+
+<div id="div2" class="divone">
+
+</div>
+
+
+
+@* Jq basics*@
+@*<script>
+        $(document).ready(function() {
+
+
+        });
+    </script>*@
+
+@* Jq Selector by tag name*@
+
+@*<script>
+        $(document).ready(function() {
+            $('p').append(' This is paragraph');
+            $('div').append('This is div');
+        });
+    </script>*@
+
+@* Jq selector by tag id*@
+
+@*<script>
+        $(document).ready(function() {
+            $('#div1').append('this is div with id div1');
+            $('#div2').append('this is div with id div2');
+            $('#para1').append('this is paragraph with id para1');
+        });
+    </script>*@
+
+@* Jq Selector by attribute name*@
+
+@*<script>
+        $(document).ready(function() {
+            $('[class]').append('this is an class attribute');
+        });
+    </script>*@
