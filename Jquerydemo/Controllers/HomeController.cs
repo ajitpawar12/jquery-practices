@@ -36,5 +36,10 @@ namespace Jquerydemo.Controllers
         {
             return View();
         }
+
+        public ActionResult TraversingDom()
+        {
+            return View();
+        }
     }
 }

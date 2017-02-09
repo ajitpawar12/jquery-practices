@@ -1,0 +1,100 @@
+﻿
+@{
+    ViewBag.Title = "TraversingDom";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>TraversingDom</h2>
+
+<h3>each() method demo</h3>
+<button id="btnshow">Show p elements</button>
+<div>
+    <p> This is first pragraph</p>
+</div>
+<div>
+    <p> This is second pragraph</p>
+</div>
+<div>
+    <p> This is third pragraph</p>
+</div>
+
+<h3>chidren method demo</h3>
+<div id="maindiv"> 
+    <button id="btnshow2">Show p element html</button>
+    <p>this is first para</p>
+
+    <div id="div1">
+        <p>this second para</p>
+    </div>
+    <div id="div2">
+        <ul>
+            <li>First li</li>
+            <li>second li</li>
+            <li>third li</li>
+        </ul>
+    </div>
+    <div id="div3">
+        <p>this third para of div3</p>
+    </div>
+</div>
+
+<h3>find() method demo</h3>
+<div id="maindiv1">
+    <button id="btnshow3">find p element html</button>
+    <p>this is first para of maindiv2</p>
+
+    <div id="div4">
+        <p>this second paraof div4</p>
+    </div>
+    <div id="div5">
+        <ul>
+            <li>First li</li>
+            <li>second li</li>
+            <li>third li</li>
+        </ul>
+    </div>
+    <div id="div6">
+        <p>this third para of div6</p>
+    </div>
+</div>
+
+@* each method demo*@
+
+<script>
+    $(document).ready(function() {
+        $('#btnshow').click(function() {
+
+            $('p').each(function (index) {
+                alert('index: ' + index + ', text: ' + $(this).text());
+            });
+        });
+    });
+</script>
+
+@* children method demo*@
+
+<script>
+    $(document).ready(function () {
+
+        $('#btnshow2').click(function () {
+
+            $('#maindiv').children().each(function (index) {
+                alert('Index: ' + index + ', html: ' + $(this).html());
+            });
+
+        });
+
+    });
+</script>
+
+@* find method demo*@
+<script>
+    $(document).ready(function() {
+
+        $('#btnshow3').click(function() {
+            $('#maindiv1').find('p').each(function(index) {
+                alert('index:' + index + ',text:' + $(this).text());
+            });
+        });
+    });
+</script>

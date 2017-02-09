@@ -6,3 +6,87 @@
 
 <h2>JqMethods</h2>
 
+<h3>JQuery after method demo</h3>
+<div id="div1">
+    This is div1 content 
+</div>
+
+
+<h3>JQuery before method demo</h3>
+
+<div id="div2">
+    This is div2 content 
+</div>
+
+<h3>Jqeury append method demo</h3>
+
+<div id="div3">"hello" append method content = </div>
+
+<h3>Jquery prepend method demo</h3>
+
+<div id="div4"> -> prepend method content +"World"</div>
+
+<h3>Jquery remove method</h3>
+
+<div id="div5">
+    This is div5 and remove() method remove's label1
+    <label id="lbl1">Label1</label>
+</div>
+
+<h3>replaceall method demo</h3>
+<div id="div6">
+    <p>This is paragraph</p>
+</div>
+
+<h3>wrap method</h3>
+<div id="div7">
+    <h4>this is h4 content warp into the h5 using wrap method</h4>
+</div>
+
+@* Jquery after method demo*@
+<script>
+    $(document).ready(function() {
+        $('#div1').after('<div style="background-color:yellow"> This is after method generated div</div>');
+    });
+</script>
+
+@*Jquery before method demo*@
+<script>
+    $(document).ready(function() {
+        $('#div2').before('<div style="background-color:gray">This is before method demo</div>')
+    });
+</script>
+
+@*Jqury append method*@
+<script>
+    $(document).ready(function() {
+        $('#div3').append('"world"');
+    });
+</script>
+
+@*Jquery prepend method*@
+<script>
+    $(document).ready(function() {
+        $('#div4').prepend('"Hello"');
+    });
+</script>
+@*Jquery remove method*@
+<script>
+    $(document).ready(function() {
+        $('#lbl1').remove();
+    });
+</script>
+
+@*Jquery replaceall method*@
+<script>
+    $(document).ready(function() {
+        $('<span>Jqerydemo</span>').replaceAll('p');
+    });
+</script>
+
+@*Jquery wrap method*@
+<script>
+    $(document).ready(function() {
+        $('h4').wrap('<h5></h5>');
+    });
+</script>
