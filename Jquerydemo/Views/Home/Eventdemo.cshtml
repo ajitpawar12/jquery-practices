@@ -1,0 +1,55 @@
+﻿
+@{
+    ViewBag.Title = "Eventdemo";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Eventdemo</h2>
+
+<h3> Click event demo</h3>
+
+<input id="btnsave1" type="button" value="Save1"/>
+
+<h3>Event object demo</h3>
+<input id ="btnsave2"type="button" value="Save2"/>
+
+<h3>this keyword in event handler</h3>
+<div>
+    <input id="btnsave" type="button" value="Save" />
+    <input id="btndel" type="button" value="delete" />
+    <input id="btncancel" type="button" value="Cancel" />
+  
+</div>
+
+@section scripts{
+
+    @*Jq click event demo*@
+    <script>
+        $(document).ready(function() {
+
+            $('#btnsave1').click(function() {
+                alert('save button is clicked');
+            });
+        });
+    </script>
+
+    @*Jq event object demo*@
+    <script>
+        $(document).ready(function() {
+
+            $('#btnsave2').click(function(eventObj) {
+                alert('X=' + eventObj.pageX + ',Y=' + eventObj.pageY);
+            });
+        });
+    </script>
+
+    @*Jq this keyword in event handler*@
+    <script>
+        $(document).ready(function() {
+
+            $(':button').click(function (eventobj) {
+                alert(this.value + ' ' + this.type + ' clicked');
+            });
+        });
+    </script>
+}

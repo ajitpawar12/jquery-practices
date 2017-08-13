@@ -1,0 +1,38 @@
+﻿@using Jquerydemo.Models
+@model Person
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<input type="button" id="btnget" value="Get Details"/>
+
+
+@section Scripts{
+    <script>
+        $(function() {
+
+            $("#btnget").click(function() {
+
+                $.ajax({
+                    type: "POST",
+                    url: "/AjaxDemo/AjaxMethod",
+                    data: '{name:"Ajit"}',
+                    contentType: "application/json; charset=utf-8",
+                    datatype: "json",
+                    success: function(response) {
+                        alert("Hello: " + response.Name + "\n" + "Current datetime: " + response.DateTime);
+                    },
+                    failure: function(response) {
+                        alert(responseText);
+                    },
+                    error: function(response) {
+                        alert(response.responseText);
+                    }
+                });
+            });
+        })
+    </script>
+}

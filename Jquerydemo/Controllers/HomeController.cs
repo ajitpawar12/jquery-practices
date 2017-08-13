@@ -41,5 +41,11 @@ namespace Jquerydemo.Controllers
         {
             return View();
         }
+
+
+        public ActionResult Eventdemo()
+        {
+            return View();
+        }
     }
 }

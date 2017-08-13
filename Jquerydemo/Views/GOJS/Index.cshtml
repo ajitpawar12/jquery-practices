@@ -1,0 +1,119 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script src="~/Scripts/go-1.7.6.js"></script>
+<script src="~/Scripts/go-1.7.6-debug.js"></script>
+<h3>Index</h3>
+<div id="myDiagramDiv" style="border: solid 1px blue; width: 1000px; height: 600px">
+    
+
+</div>
+@section Scripts{
+    <script>
+        var diagram = new go.Diagram("myDiagramDiv");
+
+        var $ = go.GraphObject.make;
+
+        //*--hello world diagram--*
+        diagram.model = new go.GraphLinksModel(
+            [
+                { key: "Hello" }, // two node data, in an Array
+                { key: "World!" }
+            ],
+            [{ from: "Hello", to: "World!" }] // one link data, in an Array
+        );
+
+        //*--Node--*
+        diagram.add(
+            $(go.Node,"Auto",
+                $(go.Shape, "RoundedRectangle", { fill: "lightblue" }),
+                $(go.TextBlock, "Ajit!", { margin: 5 })
+            ));
+
+        diagram.add(
+            $(go.Node,"Auto",
+                $(go.Shape, "Circle", { fill: "orange" }),
+                $(go.TextBlock, "Pawar", { margin: 10 })
+            ));
+
+        //*--TextBlock--*
+        diagram.add(
+            $(go.Part, "Vertical",
+            $(go.TextBlock, { text: "a Text Block" }),
+            $(go.TextBlock, { text: "a Text Block", stroke: "red" }),
+            $(go.TextBlock, { text: "a Text Block", background: "lightblue"}),
+            $(go.TextBlock, { text: "a Text Block", font: "bold 14pt serif" })
+  ));
+        //*--Editable TextBlock--*
+        diagram.add(
+        $(go.Part,
+        $(go.TextBlock,
+        {
+            text: "select and then click to edit",
+            background: "lightblue",
+            editable: true, isMultiline: false
+        })
+    ));
+        diagram.add(
+          $(go.Part,
+            $(go.TextBlock,
+              {
+                  text: "this one allows embedded newlines",
+                  background: "lightblue",
+                  editable: true
+              })
+          ));
+        //*--Shapes--*
+        diagram.add(
+    $(go.Part, "Horizontal",
+
+    $(go.Shape, "Rectangle", { width: 40, height: 60, margin: 4, fill: null }),
+
+    $(go.Shape, "RoundedRectangle", { width: 40, height: 60, margin: 4, fill: null }),
+
+    $(go.Shape, "Ellipse", { width: 40, height: 60, margin: 4, fill: null }),
+
+    $(go.Shape, "Triangle", { width: 40, height: 60, margin: 4, fill: null }),
+
+    $(go.Shape, "Diamond",{ width: 40, height: 60, margin: 4, fill: null })
+  ));
+       
+        //*--Brush--*
+
+        diagram.add($(go.Part,
+      $(go.Shape, "Circle", {
+          fill: $(go.Brush, { color: "palegreen" })
+      })
+    ));
+        
+        diagram.add($(go.Part,
+     $(go.Shape, "Circle", {
+         fill: "#DFAD83"
+     })
+   ));
+
+        diagram.add($(go.Part,
+            $(go.Shape, "Circle", {
+                fill: "rgba(0,255,0,.3)" // semi transparent green
+            })
+          ));
+
+        diagram.add($(go.Part,
+            $(go.Shape, "Circle", {
+                fill: "rgba(0,255,0,.3)",
+                stroke: '#DFBB00',
+                strokeWidth: 4,
+                background: 'coral'
+            })
+          ));
+
+        //*--Using models*
+        var nodeDataArray = [{ key: "Alpha" }, { key: "Beta" }];
+
+        var linkDataArray = [{ from: "Alpha", to: "Beta" }];
+
+        diagram.model = new go.GraphLinksModel(nodeDataArray, linkDataArray);
+    </script>
+}
