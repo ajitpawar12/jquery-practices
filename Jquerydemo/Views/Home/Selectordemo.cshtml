@@ -15,30 +15,35 @@
         background-color: yellow;
     }
 </style>
-<div id="demo">
-        <ul>
-            <li><label id="lbl"></label></li>
-            <li></li>
-            <li><input type="text" id="txtbox" /></li>
-            <li></li>
-            <li><textarea id="txtarea"></textarea></li>
-            <li></li>
-            <li><input type="submit" id="subbtn" value="Submit" /></li>
-        </ul>
+<div class="row">
+    <div class="container">
 
+
+        <div id="demo">
+            <ul>
+                <li><label id="lbl"></label></li>
+                <li></li>
+                <li><input type="text" id="txtbox" /></li>
+                <li></li>
+                <li><textarea id="txtarea"></textarea></li>
+                <li></li>
+                <li><input type="submit" id="subbtn" value="Submit" /></li>
+            </ul>
+
+        </div>
+
+        <div id="div1">
+            <p></p>
+            <p></p>
+        </div>
+
+        <p id="para1" class="paraone"></p>
+
+        <div id="div2" class="divone">
+
+        </div>
     </div>
-
-<div id="div1">
-    <p></p>
-    <p></p>
 </div>
-
-<p id="para1" class="paraone"></p>
-
-<div id="div2" class="divone">
-
-</div>
-
 
 
 @* Jq basics*@
@@ -51,12 +56,12 @@
 
 @* Jq Selector by tag name*@
 
-<script>
+@*<script>
         $(document).ready(function() {
             $('p').append(' This is paragraph');
             $('div').append('This is div');
         });
-    </script>
+    </script>*@
 
 @* Jq selector by tag id*@
 
@@ -70,8 +75,8 @@
 
 @* Jq Selector by attribute name*@
 
-<script>
+@*<script>
         $(document).ready(function() {
             $('[class]').append('this is an class attribute');
         });
-    </script>
+    </script>*@
